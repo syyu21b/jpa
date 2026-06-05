@@ -1,8 +1,16 @@
 package com.example.jpa.Entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+
+    @Id
     private long id;
     private String title;
     private String content;
