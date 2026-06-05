@@ -43,7 +43,7 @@ public class PostDto {
         private String createdAt;
         private String updatedAt;
 
-        public static Response from(com.example.demo.entity.Post post) {
+        public static Response from(com.example.jpa.entity.Post post) {
             Response response = new Response();
             response.id = post.getId();
             response.title = post.getTitle();
