@@ -1,8 +1,6 @@
 package com.example.jpa.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -14,11 +12,18 @@ import java.time.LocalDateTime;
 public class Post {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false, length = 100)
     private String title;
+
     private String content;
+
     private String author;
+
     private LocalDateTime createdAt;
+
     private LocalDateTime updatedAt;
 
     public static Post create(String title, String content, String author) {
